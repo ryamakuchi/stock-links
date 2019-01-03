@@ -59,4 +59,4 @@ jobs:
 
     # collect reports
     - store_test_results:
-        path: ~/reports
+        path: ~/test/reports/
