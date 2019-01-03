@@ -1,12 +1,16 @@
 # Ruby CircleCI 2.0 configuration file
-#
+# Ruby CircleCI 2.0 の構造ファイル
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
+# より多くの詳細は URL をチェック
+# version で重大な変更についての警告を出している（CircleCI のバージョン）
 version: 2
+# ジョブを1つしか定義しない場合は名前を build にする
 jobs:
   build:
+    # ジョブを実行する環境を machine, macos docker から選ぶ（この場合は docker）
     docker:
     # specify the version you desire here
+    # ruby のバージョンと node と browsers サフィックスをつけている
     - image: circleci/ruby:2.5.3-node-browsers
 
     # Specify service dependencies here if necessary
@@ -14,12 +18,16 @@ jobs:
     # documented at https://circleci.com/docs/2.0/circleci-images/
     # - image: circleci/postgres:9.4
 
+    # steps を実行するディレクトリを指定
     working_directory: ~/stock-links
 
+    # steps をキーにして実行したいコマンドを1つ以上定義する
     steps:
+      # リポジトリのコードのチェックアウトを行う特殊ステップ
     - checkout
 
     # Download and cache dependencies
+    # key で指定されたキャッシュを復元する
     - restore_cache:
         keys:
         - v1-dependencies-{{ checksum "Gemfile.lock" }}
@@ -27,10 +35,12 @@ jobs:
         - v1-dependencies-
 
     - run:
+        # ステップのタイトル
         name: install dependencies
-        command: |
-          bundle install --jobs=4 --retry=3 --path vendor/bundle
+        # --jobs=4 で並列実行、--retry=3 で失敗したときリトライする回数、--path で vendor/bundle に bundle install する
+        command: bundle install --jobs=4 --retry=3 --path vendor/bundle
 
+    # gem をキャッシュできる
     - save_cache:
         paths:
         - ./vendor/bundle
@@ -44,8 +54,9 @@ jobs:
     - run:
         name: run tests
         command: bundle exec rake test
+        # このステップをいつ有効にするか（この場合はいつでも有効になっている）
         when: always
 
     # collect reports
     - store_test_results:
-        path: /reports
+        path: /test/reports
