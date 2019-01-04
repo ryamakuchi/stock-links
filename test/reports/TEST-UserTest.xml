@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite time='0.059070' skipped='0' failures='0' errors='0' name="UserTest" assertions='11' tests='7' timestamp="2019-01-04T14:28:43+09:00">
-  <testcase time='0.026607' file="test/models/user_test.rb" name="test_should_be_valid" assertions='1'>
+<testsuite time='0.084457' skipped='0' failures='0' errors='0' name="UserTest" assertions='13' tests='9' timestamp="2019-01-04T21:18:50+09:00">
+  <testcase time='0.062583' file="test/models/user_test.rb" name="test_email_addresses_should_be_unique" assertions='1'>
   </testcase>
-  <testcase time='0.022555' file="test/models/user_test.rb" name="test_name_should_be_present" assertions='1'>
+  <testcase time='0.002497' file="test/models/user_test.rb" name="test_email_should_not_be_too_long" assertions='1'>
   </testcase>
-  <testcase time='0.003865' file="test/models/user_test.rb" name="test_email_addresses_should_be_unique" assertions='1'>
+  <testcase time='0.002421' file="test/models/user_test.rb" name="test_should_be_valid" assertions='1'>
   </testcase>
-  <testcase time='0.001380' file="test/models/user_test.rb" name="test_email_should_not_be_too_long" assertions='1'>
+  <testcase time='0.003297' file="test/models/user_test.rb" name="test_email_should_be_present" assertions='1'>
   </testcase>
-  <testcase time='0.001593' file="test/models/user_test.rb" name="test_email_should_be_present" assertions='1'>
+  <testcase time='0.002093' file="test/models/user_test.rb" name="test_name_should_be_present" assertions='1'>
   </testcase>
-  <testcase time='0.001975' file="test/models/user_test.rb" name="test_email_validation_should_accept_valid_addresses" assertions='5'>
+  <testcase time='0.002002' file="test/models/user_test.rb" name="test_name_should_not_be_too_long" assertions='1'>
   </testcase>
-  <testcase time='0.001095' file="test/models/user_test.rb" name="test_name_should_not_be_too_long" assertions='1'>
+  <testcase time='0.002852' file="test/models/user_test.rb" name="test_password_should_be_present_(nonblank)" assertions='1'>
+  </testcase>
+  <testcase time='0.003277' file="test/models/user_test.rb" name="test_email_validation_should_accept_valid_addresses" assertions='5'>
+  </testcase>
+  <testcase time='0.003435' file="test/models/user_test.rb" name="test_password_should_have_a_minimum_length" assertions='1'>
   </testcase>
 </testsuite>
