@@ -21,7 +21,7 @@
 
             <div class="field">
               <div class="control">
-                <%= f.password_field :password, class: "input", placeholder: "パスワード" %>
+                <%= f.password_field :password, class: "input", placeholder: "パスワード（6文字以上）" %>
               </div>
             </div>
 
@@ -30,6 +30,7 @@
                 <%= f.password_field :password_confirmation, class: "input", placeholder: "パスワードの確認" %>
               </div>
             </div>
+            <%= render 'shared/error_messages' %>
             <br>
             <%= f.submit "登録する", class: "button is-block is-info is-large is-fullwidth has-text-weight-bold	" %>
           <% end %>
