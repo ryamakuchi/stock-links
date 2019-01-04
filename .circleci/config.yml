@@ -54,8 +54,6 @@ jobs:
     - run:
         name: run tests
         command: bundle exec rake test
-        # このステップをいつ有効にするか（この場合はいつでも有効になっている）
-        when: always
 
     # collect reports
     - store_test_results:
