@@ -47,5 +47,6 @@ doc/
 .DS_Store
 .idea
 .secret
+.ruby-version
 
 /test/reports
