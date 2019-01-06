@@ -1,24 +1,31 @@
-# README
+# [WIP]Stock Links
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Stock Links は Twiiter / Pinterest / Youtube から検索したリソースをストックしてくれるサイトです。
 
-Things you may want to cover:
+本番環境:
 
-* Ruby version
+https://stock-links.herokuapp.com
 
-* System dependencies
+## Requirement
 
-* Configuration
+* Ruby on Rails 5.2.2
+* Postgres 10
 
-* Database creation
+## Setup
 
-* Database initialization
+```
+bundle install
+rails db:migrate
+rails s
+```
 
-* How to run the test suite
+## Testing
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+rails test
+```
 
-* Deployment instructions
+## Deployment
 
-* ...
+PR がマージされると自動的に Heroku にデプロイされる。
+この際にテストがこけると自動マージされない。
