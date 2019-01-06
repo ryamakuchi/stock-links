@@ -6,7 +6,7 @@
         <h1 class="title has-text-grey">アカウント登録</h1>
         <br>
         <div class="box">
-          <%= form_for(@user) do |f| %>
+          <%= form_for(@user , url: signup_path) do |f| %>
             <div class="field">
               <div class="control">
                 <%= f.text_field :name, class: "input", placeholder: "名前" %>
