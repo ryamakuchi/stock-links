@@ -1,0 +1,13 @@
+<% if @user.errors.any? %>
+  <div>
+    <div class="message is-danger">
+      <div class="message-body has-text-left">
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li class="is-size-7">・<%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
